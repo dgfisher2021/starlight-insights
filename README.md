@@ -119,3 +119,4 @@ Created as a fun fusion of real astronomy and astrological personality insights.
 -----
 
 *“You’re not just born under stars, you’re born as living expressions of the universe’s most magnificent phenomena!”*
+https://codepen.io/5t3ph/pen/GRQebrX
