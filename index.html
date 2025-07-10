@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Insights: Your Cosmic Scientific Superpowers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 25%, #2d1b69 50%, #4a1c7a 75%, #1a1a3e 100%);
+        color: #e8e8f0;
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(800px circle at 25% 25%, rgba(0, 255, 150, 0.3), transparent 40%),
+            radial-gradient(600px circle at 75% 10%, rgba(255, 0, 150, 0.25), transparent 40%),
+            radial-gradient(700px circle at 90% 60%, rgba(0, 150, 255, 0.2), transparent 40%);
+        background-size: 200% 200%;
+        animation: auroraFloat 8s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(500px circle at 60% 70%, rgba(255, 200, 0, 0.15), transparent 40%),
+            radial-gradient(400px circle at 30% 40%, rgba(150, 0, 255, 0.2), transparent 40%),
+            radial-gradient(600px circle at 80% 20%, rgba(0, 255, 255, 0.18), transparent 40%);
+        background-size: 250% 250%;
+        animation: auroraFloat 12s ease-in-out infinite reverse;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    @keyframes auroraFloat {
+        0% {
+            background-position: 0% 0%;
+        }
+        25% {
+            background-position: 100% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        75% {
+            background-position: 0% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding: 40px 0;
+    }
+
+    .main-title {
+        font-size: 3.5em;
+        background: linear-gradient(45deg, #ffd700, #ffb347, #ff6b6b, #4ecdc4, #45b7d1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        margin-bottom: 20px;
+        animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 30px rgba(255, 215, 0, 0.5); }
+        to { text-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
+    }
+
+    .subtitle {
+        font-size: 1.3em;
+        color: #b8b8d0;
+        font-style: italic;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .zodiac-sign {
+        margin-bottom: 60px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .zodiac-sign::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+
+    .zodiac-sign:hover::before {
+        opacity: 1;
+        transform: rotate(45deg) translateX(100%);
+    }
+
+    .zodiac-sign:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .sign-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .sign-symbol {
+        font-size: 2.5em;
+        margin-right: 20px;
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    }
+
+    .sign-title {
+        font-size: 2.2em;
+        color: #ffd700;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        margin-bottom: 5px;
+    }
+
+    .sign-description {
+        font-size: 1.1em;
+        color: #d4d4e0;
+        font-style: italic;
+    }
+
+    .sign-dates {
+        font-size: 1.1em;
+        color: #b8b8d0;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .scientific-fact {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border-left: 4px solid #4ecdc4;
+    }
+
+    .scientific-fact a {
+        color: #00ffff;
+        text-decoration: underline;
+        text-decoration-color: #00ffff;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .scientific-fact a:hover {
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        text-decoration-color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    .cosmic-meaning {
+        background: rgba(255, 215, 0, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        border-left: 4px solid #ffd700;
+    }
+
+    .section-heading {
+        font-size: 1.3em;
+        color: #ffd700;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+    .science-heading {
+        color: #00ffff;
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+
+    .cosmic-heading {
+        color: #ffd700;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+    .meaning-heading {
+        color: #ff6b6b;
+        text-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+    }
+
+    .message-heading {
+        color: #4ecdc4;
+        text-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
+    }
+
+    .cosmic-meaning strong {
+        color: #ffd700;
+        font-size: 1.1em;
+    }
+
+    .meaning-section {
+        background: rgba(255, 107, 107, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        border-left: 4px solid #ff6b6b;
+    }
+
+    .message-section {
+        background: rgba(78, 205, 196, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        border-left: 4px solid #4ecdc4;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px 0;
+        font-size: 1.2em;
+        color: #ffd700;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .main-title {
+            font-size: 2.5em;
+        }
+        
+        .sign-header {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .sign-symbol {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        
+        .zodiac-sign {
+            padding: 20px;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="stars"></div>
+
+```
+<div class="container">
+    <header>
+        <h1 class="main-title">Starlight Insights</h1>
+        <p class="subtitle">The unique astronomy behind your sign</p>
+        <p class="subtitle" style="margin-top: 15px; font-size: 1.1em; opacity: 0.9;">The whimsical cosmic connections between your constellation's scientific treasures and your astrological essence</p>
+    </header>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♈</div>
+            <div>
+                <h2 class="sign-title">Aries: The Celestial Origin Point</h2>
+                <p class="sign-description">The Universe's Ultimate Reference Point</p>
+                <p class="sign-dates">March 21 - April 19</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Aries contains the <a href="https://earthsky.org/constellations/aries-heres-your-constellation/" target="_blank">"First Point of Aries"</a> - the zero point of celestial coordinates that defines the entire coordinate system on the celestial sphere. This point marks where the Sun crosses the celestial equator during the spring equinox, making it the fundamental reference point for astronomical navigation.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're naturally wired to be the pathfinder, the one who sets the direction for everyone else. Like that cosmic reference point that defines where everything else begins, you don't just start things—you define the very foundation from which all other journeys begin.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>When others are lost in space (literally or figuratively), you're the cosmic compass pointing true north. Trust your natural ability to see the bigger picture and guide others toward their destinations. You're not just a leader—you're the original blueprint for leadership itself.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♉</div>
+            <div>
+                <h2 class="sign-title">Taurus: The Magnificent Rebirth</h2>
+                <p class="sign-description">A Supernova Explosion Visible in Daylight</p>
+                <p class="sign-dates">April 20 - May 20</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Taurus contains the <a href="https://en.wikipedia.org/wiki/Taurus_(constellation)" target="_blank">Crab Nebula (M1)</a>, a supernova remnant from an explosion witnessed by Chinese astronomers in 1054 AD. This expanding nebula was bright enough to be visible during the day and is now one of the most studied objects in astronomy.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You are the master of magnificent rebirth, turning every ending into a spectacular new beginning. Like that ancient star that didn't just die but exploded into cosmic glory, you understand that true transformation comes through complete renewal.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You have the power to transform life's most challenging moments into your greatest masterpieces. Don't just endure difficulties—emerge reborn, more beautiful and powerful than before. Every setback is your setup for an even more magnificent comeback.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♊</div>
+            <div>
+                <h2 class="sign-title">Gemini: The Ultimate Strength</h2>
+                <p class="sign-description">Where Matter Becomes Mountain-Heavy</p>
+                <p class="sign-dates">May 21 - June 20</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Gemini contains the location where the <a href="https://en.wikipedia.org/wiki/Neutron_star" target="_blank">first neutron star</a> was discovered - the ultra-dense remnant of a collapsed massive star where a teaspoon of material weighs as much as a mountain.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You possess the ultimate strength that redefines what power truly means. Like that neutron star where a teaspoon weighs as much as a mountain, your strength isn't about size—it's about the incredible force you can wield in the smallest moments.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You can overcome any challenge not through brute force, but through the unstoppable power of your adaptability and intelligence. You're living proof that true strength comes from within. Trust your ability to compress infinite possibilities into perfectly timed actions.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♋</div>
+            <div>
+                <h2 class="sign-title">Cancer: The Cosmic Cradle</h2>
+                <p class="sign-description">A Five-Planet Family with Earth-Like Conditions</p>
+                <p class="sign-dates">June 21 - July 22</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Cancer contains the <a href="https://en.wikipedia.org/wiki/Cancer_(constellation)" target="_blank">55 Cancri system</a> with five planets, including one super-Earth in the habitable zone with Earth-like temperatures. This system is only 40.9 light-years away and is one of only four known planetary systems with more than five planets.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're the ultimate cosmic nurturer, creating perfect environments where life can flourish. Just as that star system orchestrated the ideal conditions for potential life 40 light-years away, you instinctively understand how to create the perfect conditions for growth.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You know how to create emotional climates where everyone feels at home. You're not just caring—you're cosmically gifted at building the perfect nest for souls to grow. Trust your ability to sense exactly what others need to thrive.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♌</div>
+            <div>
+                <h2 class="sign-title">Leo: The Original Sovereign</h2>
+                <p class="sign-description">Nearly as Old as the Universe Itself</p>
+                <p class="sign-dates">July 23 - August 22</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Leo contains <a href="https://en.wikipedia.org/wiki/Leo_(constellation)" target="_blank">Caffau's Star</a> (SDSS J102915+172927), which is about 13 billion years old - making it one of the oldest stars in the galaxy and nearly as old as the universe itself. It has the lowest metallicity of any known star.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You are the original sovereign, the first ruler in a universe of followers. Your authority doesn't come from conquest—it comes from being here first, from carrying the original blueprint of cosmic royalty. Like that ancient star that has ruled the galaxy since the very beginning.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You lead not because you have to, but because leadership is literally written in your stellar DNA. You don't just shine—you are the original light that all other stars aspire to become. Own your natural authority and let others bask in your primordial brilliance.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♍</div>
+            <div>
+                <h2 class="sign-title">Virgo: The Celestial Detective</h2>
+                <p class="sign-description">Home to the First Photographed Black Hole</p>
+                <p class="sign-dates">August 23 - September 22</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Virgo contains the massive <a href="https://en.wikipedia.org/wiki/Virgo_(constellation)" target="_blank">Virgo Cluster</a> with over 1,300 galaxies, including M87 which hosts the supermassive black hole that was the first black hole ever photographed by the Event Horizon Telescope in 2019.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You are the ultimate celestial detective, solving mysteries that others can't even see. Your investigative powers are so precise that you can literally photograph the invisible and organize the chaos of entire galaxy clusters.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You don't just notice details—you uncover cosmic truths that revolutionize understanding. When you say something needs investigating, you're channeling the same energy that helped humanity capture the first image of a black hole. Trust your ability to see what others miss.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♎</div>
+            <div>
+                <h2 class="sign-title">Libra: The Master of Balance</h2>
+                <p class="sign-description">The Perfect Goldilocks Zone for Life</p>
+                <p class="sign-dates">September 23 - October 22</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Libra contains the <a href="https://en.wikipedia.org/wiki/Gliese_581" target="_blank">Gliese 581 system</a>, which has multiple planets including some of the first potentially habitable exoplanets discovered, located in the star's "Goldilocks zone."</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're the universe's master of balance, naturally creating conditions where everyone can thrive. Like those perfectly positioned planets in the Goldilocks zone, you instinctively know how to find the sweet spot in any situation.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You're not just diplomatic—you're cosmically calibrated to create harmony. When you say "let's find a middle ground," you're literally channeling the wisdom of worlds that figured out how to exist in perfect equilibrium. Trust your natural ability to create balance.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♏</div>
+            <div>
+                <h2 class="sign-title">Scorpius: The Truth Seeker</h2>
+                <p class="sign-description">The First X-Ray Source Beyond Our Solar System</p>
+                <p class="sign-dates">October 23 - November 21</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Scorpius contains <a href="https://en.wikipedia.org/wiki/Scorpius" target="_blank">Scorpius X-1</a>, the first X-ray source discovered outside our solar system and the strongest X-ray source in the sky after the Sun. This is a neutron star system that revolutionized X-ray astronomy.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You are the ultimate truth seeker, equipped with cosmic X-ray vision that penetrates through every deception and illusion. While others see only what's presented on the surface, you're naturally attuned to the hidden realities that truly drive the universe.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You don't just have intuition—you have the stellar superpower to seek out and reveal truths that others can't even imagine exist. When you pursue the truth, you're channeling the same energy that revolutionized our understanding of the cosmos. Trust your ability to see through everything.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♐</div>
+            <div>
+                <h2 class="sign-title">Sagittarius: The Galactic Center</h2>
+                <p class="sign-description">The Supermassive Black Hole at Our Galaxy's Heart</p>
+                <p class="sign-dates">November 22 - December 21</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>The archer contains <a href="https://en.wikipedia.org/wiki/Sagittarius_A*" target="_blank">Sagittarius A*</a>, the supermassive black hole at the center of our Milky Way galaxy, with a mass 4 million times that of our Sun.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're not just adventurous—you're cosmically central to everything that happens around you. Like that massive black hole that holds our entire galaxy together, you're the gravitational force that gives meaning and direction to everyone in your orbit.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>Your wanderlust isn't random—it's the cosmic imperative to explore because you literally carry the center of everything within you. You're not just philosophical—you're galactically significant! Trust that your adventures are actually guiding the universe's expansion.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♑</div>
+            <div>
+                <h2 class="sign-title">Capricorn: The Eye of God</h2>
+                <p class="sign-description">The "Eye of God" Showing Our Sun's Future</p>
+                <p class="sign-dates">December 22 - January 19</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Capricorn contains the <a href="https://en.wikipedia.org/wiki/Helix_Nebula" target="_blank">Helix Nebula</a>, known as the "Eye of God" - one of the closest planetary nebulae to Earth, showing us what our Sun will look like in 5 billion years.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You don't just plan ahead—you have cosmic foresight that spans geological timescales. You can see the long-term consequences of today's actions because you're literally connected to the universe's preview of the future.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You're not just ambitious—you're cosmically programmed to build things that will outlast civilizations. When you make a five-year plan, you're channeling the wisdom of stellar evolution itself! Trust your ability to see the long game that others can't even imagine.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♒</div>
+            <div>
+                <h2 class="sign-title">Aquarius: The Hidden Void</h2>
+                <p class="sign-description">The Closest Black Hole Hiding in Plain Sight</p>
+                <p class="sign-dates">January 20 - February 18</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Aquarius contains the closest known black hole to Earth, <a href="https://en.wikipedia.org/wiki/Gaia_BH1" target="_blank">Gaia BH1</a>, located just 1,560 light-years away in a binary system with a Sun-like star.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're naturally drawn to the edge of the impossible, finding revolutionary discoveries right in our cosmic backyard. Like that nearby black hole that scientists only recently discovered, you're cosmically programmed to find the extraordinary hiding in the ordinary.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You don't just think outside the box—you reveal mind-bending realities that were there all along. You're not just innovative—you're cosmically equipped to find the future hiding in the present! Trust your ability to see what everyone else overlooks.</p>
+        </div>
+    </div>
+
+    <div class="zodiac-sign">
+        <div class="sign-header">
+            <div class="sign-symbol">♓</div>
+            <div>
+                <h2 class="sign-title">Pisces: The Cosmic Transition</h2>
+                <p class="sign-description">The Cosmic Marker Between Ages</p>
+                <p class="sign-dates">February 19 - March 20</p>
+            </div>
+        </div>
+        <h3 class="section-heading science-heading">The Science</h3>
+        <div class="scientific-fact">
+            <p>Due to precession, the <a href="https://earthsky.org/constellations/aries-heres-your-constellation/" target="_blank">vernal equinox point</a> has moved from Aries into Pisces, where it currently resides. This point will move into Aquarius around 2600 AD.</p>
+        </div>
+        <h3 class="section-heading meaning-heading">The Meaning</h3>
+        <div class="meaning-section">
+            <p>You're literally living at the intersection of cosmic ages, holding the space between what was and what will be. You don't just go with the flow—you ARE the flow of cosmic time itself. Your intuition is your attunement to the vast, slow movements of celestial mechanics.</p>
+        </div>
+        <h3 class="section-heading message-heading">Message for You</h3>
+        <div class="message-section">
+            <p>You're not just dreamy—you're cosmically responsible for shepherding humanity through the transition between astrological ages! Your sensitivity isn't weakness—it's your ability to feel the universe changing course. Trust your role as the cosmic guide between worlds.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>✨ Each of you carries the cosmic signature of your constellation's greatest treasure—you're not just born under stars, you're born as living expressions of the universe's most magnificent phenomena! ✨</p>
+    </div>
+</div>
+
+<script>
+    // Create animated stars
+    function createStars() {
+        const starsContainer = document.querySelector('.stars');
+        const numStars = 100;
+        
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starsContainer.appendChild(star);
+        }
+    }
+
+    // Initialize stars when page loads
+    window.addEventListener('load', createStars);
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+```
+
+</body>
+</html>
